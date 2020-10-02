@@ -1,0 +1,14 @@
+#!/bin/bash
+
+let str symb
+while [ 1 ]
+do 
+read "symb"
+if [[ "$symb" == "q" ]]
+ then 
+     break 
+ else
+     str+=$symb
+fi
+done
+echo $str
