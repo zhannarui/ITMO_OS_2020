@@ -8,4 +8,4 @@ fi
 if [[ "$z" > "$max" ]]
  then max="$z"
 fi
-esho $max
+echo $max
