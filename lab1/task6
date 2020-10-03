@@ -1,4 +1,4 @@
 #!/bin/bash
 
-grep "\\(II\\) //var/log/anaconda/X.log | sed -E "s/\\(II\\)/Information: /" > full.log
-grep "\\(WW\\) //var/log/anaconda/X.log | sed -E "s/\\(WW\\)/Warning: /" >> full.log
+grep "\\(II\\)" //var/log/anaconda/X.log | sed -E "s/\\(II\\)/Information: /" > full.log
+grep "\\(WW\\)" //var/log/anaconda/X.log | sed -E "s/\\(WW\\)/Warning: /" >> full.log
