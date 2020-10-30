@@ -1,6 +1,6 @@
 #!/bin/bash
 rm try4.txt
-for pid in $(ls proc | grep "[0-9\+")
+for pid in $(ls proc | grep "[0-9]\+")
 do
 ppid=$(grep "PPid" /proc/$pid/status 2>/dev/null | awk '{print $2}')
 ser=$(grep "sum_exec_runtime" /proc/$pid/sched 2>/dev/null | awk '{print $3}')
