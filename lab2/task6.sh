@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 maxSize=0
 pid=0
 for x in $(ls /proc | grep "[0-9]")
