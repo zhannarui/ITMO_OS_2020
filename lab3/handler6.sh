@@ -1,5 +1,7 @@
 #!/bin/bash
+
 echo $$ > pipe6 
+
 num=1
 command="+"
 
