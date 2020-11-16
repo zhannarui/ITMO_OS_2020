@@ -16,7 +16,7 @@ user1()
 
 user2()
 {
-command="*"
+     command="*"
 }
 
 trap 'sigterm' SIGTERM
