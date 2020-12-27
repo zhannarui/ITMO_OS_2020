@@ -1,6 +1,6 @@
 #!/ban/bash
-script1=$1
-
+file=$1
+vers=0
 #a
 case $script1 in 
 *\ *)
@@ -28,13 +28,17 @@ mkdir $HOME/.trash
 fi
 
 #c
-link=$(date + "%T")
-ln $script1 $HOME/.trash/$link
-rm $script1
+link=$file-$vers
+while [ -f $HOME/.trash/$link ]
+do
+vers=$(echo $vers"+1")
+link=$file-$vers
+done
+ln $file $HOME/.trash/$link
 
 #d
-if [[ ! -e $HOME/.trash.log ]]
+if [[ -z $(grep $(realpath $file) $HOME/.trash.log ]]
 then
-touch $HOME/.trash.log
+echo $(realpath $file) >> $HOME/.trash.log
 fi
-echo "$PWD/$script1 : $link" > $HOME/.trash.log
+rm $file
