@@ -2,7 +2,7 @@
 file=$1
 vers=0
 #a
-case $script1 in 
+case $file in 
 *\ *)
 echo "Your strings must be without spaces"
 exit 1 
@@ -15,7 +15,7 @@ echo "Wrong number of input arguments"
 exit 1
 fi
 
-if [[ ! -f $script1 ]]
+if [[ ! -f $file ]]
 then
 echo "Wrong format of file"
 exit 1
