@@ -1,6 +1,6 @@
 prev_backup=$(ls /home/user | grep -E "^Backup-????-??-??" | sort -n -r | head -1 )
 dir_made=0
-new_backup=~/Backup-$(date +"%F")
+new_backup=/home/user/Backup-$(date +"%F")
 backup_update=0
 if [ ! -d /home/user/source ]
 then
