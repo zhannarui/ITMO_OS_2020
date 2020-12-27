@@ -21,31 +21,31 @@ fi
 #b
 if (( $dir_made == 1 ))
 then
-	cp ~/source/* $new_backup
-	echo "New backup created: Backup-"$(date +"%F")" "$(date +"%T")" "$(ls ~/source/*) >> ~/backup-report
+	cp /home/user/source/* $new_backup
+	echo "New backup created: Backup-"$(date +"%F")" "$(date +"%T")" "$(ls /home/user/source/*) >> /home/user/backup-report
 #c
 else
 	changed_files="Changed files:\n"
 	new_files="New Files:\n"
-	for file in $(ls ~/source)
+	for file in $(ls /home/user/source)
 	do
-		if [ -f ~/$prev_backup/$file ]
+		if [ -f /home/user/$prev_backup/$file ]
 		then
-			if [[ $(stat -c "%s" ~/$prev_backup/$file) -ne $(stat -c "%s" ~/source/$file) ]]
+			if [[ $(stat -c "%s" /home/user/$prev_backup/$file) -ne $(stat -c "%s" /home/user/source/$file) ]]
 			then
 				backup_update=1
-				mv ~/$prev_backup/$file ~/$prev_backup/$file.$(date +"%F")
-				cp ~/source/$file ~/$prev_backup
+				mv /home/user/$prev_backup/$file /home/user/$prev_backup/$file.$(date +"%F")
+				cp /home/user/source/$file /home/user/$prev_backup
 				changed_files=$changed_files""$file" "$file.$(date +"%F")"\n"
 			fi
 		else
 			backup_update=1
-			cp ~/source/$file ~/$prev_backup
+			cp /home/user/source/$file /home/user/$prev_backup
 			new_files=$new_files""$file"\n"
 		fi
 	done
 	if (( $backup_update == 1 ))
 	then
-		echo -e "Backup updated: "${prev_backup:7}" "$(date +"%T")"\n"$new_files"---\n"$changed_files"---\n" >> ~/backup-report
+		echo -e "Backup updated: "${prev_backup:7}" "$(date +"%T")"\n"$new_files"---\n"$changed_files"---\n" >> /home/user/backup-report
 	fi
 fi
