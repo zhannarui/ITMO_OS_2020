@@ -31,14 +31,15 @@ fi
 link=$file-$vers
 while [ -f $HOME/.trash/$link ]
 do
-vers=$(echo $vers"+1")
+let "vers = vers + 1"
 link=$file-$vers
 done
 ln $file $HOME/.trash/$link
 
 #d
-if [[ -z $(grep $(realpath $file) $HOME/.trash.log ]]
+if [[ ! -e $HOME/.trash.log ]]
 then
-echo $(realpath $file) >> $HOME/.trash.log
+touch $HOME/.trash.log
 fi
+echo $(realpath $file) $link >> $HOME/.trash.log
 rm $file
