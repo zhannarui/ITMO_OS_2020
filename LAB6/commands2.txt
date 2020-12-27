@@ -1,0 +1,9 @@
+NAMEHOST > name.txt
+net share temp="C:\IEWIN7\temp"
+notepad copy.bat
+schtasks /Create /SC ONCE /TN task3 /TR copy.bat /ST 14:29
+schtasks /Query /TN task3
+taskkill /TM copy.bat
+fc C:\Windows\explorer.exe C:\IEWIN7\temp\explorer.exe > delta.txt
+type delta.txt
+copy.bat

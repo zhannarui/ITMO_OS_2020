@@ -1,0 +1,10 @@
+Comparing files listofserv.txt and UPDATELISTOFSERV.TXT
+***** listofserv.txt
+   Distributed Link Tracking Client
+   DNS Client
+   Function Discovery Resource Publication
+***** UPDATELISTOFSERV.TXT
+   Distributed Link Tracking Client
+   Function Discovery Resource Publication
+*****
+

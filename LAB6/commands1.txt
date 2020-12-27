@@ -1,0 +1,10 @@
+md LAB6
+cd LAB6
+ver > version.txt
+wmic logicaldisk get Size, FreeSpace > mem.txt
+wmic logicaldisk list brief > disk.txt
+md TEST
+copy *.txt TEST
+cd TEST 
+dir /B > fileslist.txt
+del "disk.txt" "version.txt" "mem.txt"
